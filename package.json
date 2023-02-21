@@ -1,18 +1,21 @@
 {
-  "name": "memory_game",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "sh ./script/build.sh",
-    "wts": "npx tsc --watch",
-    "wsass": "sass --watch scss:css"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "sass": "^1.58.3",
-    "typescript": "^4.9.5"
-  }
+	"name": "memory_game",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"wts": "npx tsc --watch",
+		"wsass": "sass --watch scss:css",
+		"build": "sh ./script/build.sh"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"sass": "^1.58.3",
+		"typescript": "^4.9.5"
+	},
+	"dependencies": {
+		"esbuild": "0.17.10"
+	}
 }
