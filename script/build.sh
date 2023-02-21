@@ -9,7 +9,7 @@ cp index.html dist/index.html
 cp assets/*.* ./dist/assets/
 cp data/data.json ./dist/data/
 sass scss/style.scss:dist/css/style.css --style compressed
-npx tsc --project tsconfig.production.json
+npx tsc --project tsconfig.config.json
 cd dist
 esbuild app.js --minify --allow-overwrite --outfile=app.js
 cd css
