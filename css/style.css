@@ -1,5 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Quicksand:wght@400;700&display=swap");
+*, ::before, ::after, h1, h2, h3, h4, h5, h6 {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+footer p, footer, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer, header {
+  margin: 15px 2vw;
+  padding: 20px 30px;
+  box-shadow: rgba(146, 88, 206, 0.35) 0px 0px 12px 0px, rgba(146, 88, 206, 0.5) 0px 0px 1px 0px;
+  background-color: #030031;
+  border-radius: 12px;
+}
+
 * {
-  background-color: #333333;
+  color: #F3F3F3;
+  font-family: "Quicksand", cursive, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-image: url("../assets/bg-game.jpg");
+  background-size: 300px;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+header {
+  min-height: max-content;
+  min-width: max-content;
+}
+header h1 {
+  font-family: "Audiowide", cursive, Arial, Helvetica, sans-serif;
+  font-size: 2.5em;
+}
+
+footer {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+footer svg {
+  height: 25px;
+  width: 25px;
+  margin: 0 7px;
+}
+footer p a {
+  display: inline-block;
+  border-bottom: 2px solid transparent;
+}
+footer p a:hover {
+  border-bottom: 2px solid #F3F3F3;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,3 +1,59 @@
+@import "_reset.scss";
+@import "_variables.scss";
+@import "_placeholders.scss";
+@import "_mixins.scss";
+@import "_responsive.scss";
+
 * {
-    background-color: #333333;
+    color: $txtMain;
+    font-family: $text;
+}
+
+
+body {
+    background-image: url("../assets/bg-game.jpg");
+    background-size: 300px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
+//------HEADER
+header {
+    // @include flexbox(row, center, center);
+    @extend %flex-center;
+    @extend %header-footer;
+    @include min-height-width(max-content, max-content);
+
+    h1 {
+        font-family: $title;
+        font-size: 2.5em;
+    }
+}
+
+
+//------FOOTER
+footer {
+    @extend %flex-center;
+    @extend %header-footer;
+    font-size: 1.2em;
+    font-weight: 700;
+
+    svg {
+        height: 25px;
+        width: 25px;
+        margin: 0 7px;
+    }
+
+    p {
+        @extend %flex-center;
+
+        a {
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                border-bottom: 2px solid $txtMain;
+            }
+        }
+    }
 }

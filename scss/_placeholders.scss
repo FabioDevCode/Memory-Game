@@ -1,0 +1,16 @@
+// @extend %flex-center
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%header-footer {
+    margin: 15px 2vw;
+    padding: 20px 30px;
+    box-shadow: rgba(146, 88, 206, .35) 0px 0px 12px 0px,
+                rgba(146, 88, 206, .5) 0px 0px 1px 0px;
+    background-color: $bgMain;
+    border-radius: 12px;
+}
