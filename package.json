@@ -6,7 +6,7 @@
 	"scripts": {
 		"wts": "npx tsc --watch",
 		"wsass": "sass --watch scss:css",
-		"build": "sh ./script/build.sh"
+		"build": "sh ./_script/build.sh"
 	},
 	"keywords": [],
 	"author": "",
