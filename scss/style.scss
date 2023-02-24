@@ -32,15 +32,17 @@ header {
 main {
     margin: 15px 2vw;
     padding: 20px 30px;
-    @include min-height-width(max-content, max-content);
+    @include min-height-width(450px, 320px);
     background-color: rgba($bgMain, .5);
-    height: 700px;
+    height: 100vh;
+    max-height: calc(100vh - 220px);
+
     border-radius: 12px;
 
 
     #choice {
         @include flexbox(column, center, center);
-        @include min-height-width(600px, 320px);
+        @include min-height-width(400px, 320px);
         @include height-width(100%, 100%)
     }
 
@@ -79,11 +81,11 @@ main {
         @extend %pointer;
         background-color: $violet;
         width: 230px;
-        height: 50px;
+        height: 60px;
         padding: 5px;
         margin: 25px 0;
         border-radius: 5px;
-        font-size: .9em;
+        font-size: 1.1em;
 
         &:focus {
             background-color: $blue;
@@ -99,35 +101,26 @@ main {
         margin: 25px 0;
         font-size: 1.6em;
         font-weight: 700;
-
-        box-shadow: rgba($violet, 0.3) 0px 19px 38px, 
+        box-shadow: rgba($violet, 0.3) 0px 19px 38px,
                     rgba($violet, 0.22) 0px 15px 12px;
 
         &:hover {
-            background-color: $blue;
-            box-shadow: rgba($blue, 0.25) 0px 54px 55px,
-                        rgba($blue, 0.12) 0px -12px 30px,
-                        rgba($blue, 0.12) 0px 4px 6px,
-                        rgba($blue, 0.17) 0px 12px 13px,
-                        rgba($blue, 0.09) 0px -3px 5px;
+            @extend %blue-neon;
         }
 
         &:active {
             transform: scale(.95);
+            @extend %blue-neon;
         }
     }
 }
 
 .active {
-    transform: scale(1.1);
-    background-color: $blue !important;
-    box-shadow: rgba($blue, 0.25) 0px 54px 55px,
-                rgba($blue, 0.12) 0px -12px 30px,
-                rgba($blue, 0.12) 0px 4px 6px,
-                rgba($blue, 0.17) 0px 12px 13px,
-                rgba($blue, 0.09) 0px -3px 5px !important;
+    transform: scale(1.02);
+    @extend %blue-neon;
+
     svg {
-        transform: scale(1.05);
+        transform: scale(1);
     }
 }
 

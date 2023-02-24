@@ -7,7 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="./assets/brain.svg" />
 
     <link rel="stylesheet" href="./css/style.css">
-    <script defer type="application/json" src="./app.js"></script>
+    <script defer src="./app.js"></script>
 
     <title>Memroy Game</title>
 </head>
@@ -18,8 +18,13 @@
 
     <main>
         <div id="choice">
+            <select name="theme" id="select-theme">
+
+            </select>
+
+
             <div class="btn-grid-list">
-                <button class="btn-grid btn-grid-4 active">
+                <button class="btn-grid btn-grid-4 active" value="4">
                     <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100" height="100" fill="#030031"/>
                         <rect x="120" width="100" height="100" fill="#030031"/>
@@ -33,7 +38,7 @@
                         <path d="M96.8058 228.915V201.678L177.04 74.9091H199.753V113.688H185.904L131.891 199.277V200.754H243.887V228.915H96.8058ZM187.012 264V220.605L187.381 208.418V74.9091H219.696V264H187.012Z" fill="white"/>
                     </svg>
                 </button>
-                <button class="btn-grid btn-grid-5">
+                <button class="btn-grid btn-grid-5" value="5">
                     <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100" height="100" fill="#030031"/>
                         <rect x="120" width="100" height="100" fill="#030031"/>
@@ -47,7 +52,7 @@
                         <path d="M169.777 266.585C157.466 266.585 146.448 264.277 136.723 259.661C126.998 254.982 119.273 248.581 113.548 240.456C107.885 232.331 104.869 223.036 104.5 212.572H137.739C138.354 220.328 141.709 226.668 147.803 231.592C153.896 236.455 161.221 238.886 169.777 238.886C176.486 238.886 182.457 237.348 187.689 234.27C192.921 231.192 197.045 226.914 200.061 221.436C203.077 215.958 204.554 209.71 204.493 202.693C204.554 195.553 203.046 189.213 199.969 183.673C196.891 178.134 192.675 173.794 187.32 170.655C181.964 167.454 175.809 165.854 168.854 165.854C163.191 165.792 157.62 166.839 152.142 168.993C146.664 171.147 142.324 173.979 139.124 177.487L108.193 172.409L118.072 74.9091H227.76V103.531H146.418L140.97 153.666H142.078C145.587 149.542 150.542 146.126 156.943 143.418C163.345 140.648 170.362 139.263 177.994 139.263C189.443 139.263 199.661 141.971 208.648 147.388C217.634 152.743 224.713 160.129 229.884 169.547C235.054 178.964 237.639 189.736 237.639 201.862C237.639 214.357 234.746 225.499 228.96 235.286C223.236 245.011 215.265 252.674 205.047 258.276C194.891 263.815 183.134 266.585 169.777 266.585Z" fill="white"/>
                     </svg>
                 </button>
-                <button class="btn-grid btn-grid-6">
+                <button class="btn-grid btn-grid-6" value="6">
                     <svg width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect width="100" height="100" fill="#030031"/>
                         <rect x="120" width="100" height="100" fill="#030031"/>
@@ -63,16 +68,13 @@
                 </button>
             </div>
 
-            <select name="theme" id="select-theme">
-                <option value="none">-- Choisir un thême --</option>
-            </select>
 
             <button class="btn-play">
                 PLAY
             </button>
         </div>
 
-        <div id="party">
+        <div id="party" class="none">
             <!-- bandeau avec -->
             <!-- un timer -->
             <!-- nb paires trouvées -->

@@ -27,6 +27,11 @@ footer, header {
   border-radius: 12px;
 }
 
+.active, main .btn-play:active, main .btn-play:hover {
+  background-color: #29A5F2 !important;
+  box-shadow: rgba(41, 165, 242, 0.25) 0px 54px 55px, rgba(41, 165, 242, 0.12) 0px -12px 30px, rgba(41, 165, 242, 0.12) 0px 4px 6px, rgba(41, 165, 242, 0.17) 0px 12px 13px, rgba(41, 165, 242, 0.09) 0px -3px 5px !important;
+}
+
 main .btn-play, main #select-theme, main .btn-grid-list button {
   cursor: pointer;
 }
@@ -56,10 +61,11 @@ header h1 {
 main {
   margin: 15px 2vw;
   padding: 20px 30px;
-  min-height: max-content;
-  min-width: max-content;
+  min-height: 450px;
+  min-width: 320px;
   background-color: rgba(3, 0, 49, 0.5);
-  height: 700px;
+  height: 100vh;
+  max-height: calc(100vh - 220px);
   border-radius: 12px;
 }
 main #choice {
@@ -67,7 +73,7 @@ main #choice {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 600px;
+  min-height: 400px;
   min-width: 320px;
   height: 100%;
   width: 100%;
@@ -102,11 +108,11 @@ main .btn-grid-list button svg {
 main #select-theme {
   background-color: #9A5BD9;
   width: 230px;
-  height: 50px;
+  height: 60px;
   padding: 5px;
   margin: 25px 0;
   border-radius: 5px;
-  font-size: 0.9em;
+  font-size: 1.1em;
 }
 main #select-theme:focus {
   background-color: #29A5F2;
@@ -121,21 +127,15 @@ main .btn-play {
   font-weight: 700;
   box-shadow: rgba(154, 91, 217, 0.3) 0px 19px 38px, rgba(154, 91, 217, 0.22) 0px 15px 12px;
 }
-main .btn-play:hover {
-  background-color: #29A5F2;
-  box-shadow: rgba(41, 165, 242, 0.25) 0px 54px 55px, rgba(41, 165, 242, 0.12) 0px -12px 30px, rgba(41, 165, 242, 0.12) 0px 4px 6px, rgba(41, 165, 242, 0.17) 0px 12px 13px, rgba(41, 165, 242, 0.09) 0px -3px 5px;
-}
 main .btn-play:active {
   transform: scale(0.95);
 }
 
 .active {
-  transform: scale(1.1);
-  background-color: #29A5F2 !important;
-  box-shadow: rgba(41, 165, 242, 0.25) 0px 54px 55px, rgba(41, 165, 242, 0.12) 0px -12px 30px, rgba(41, 165, 242, 0.12) 0px 4px 6px, rgba(41, 165, 242, 0.17) 0px 12px 13px, rgba(41, 165, 242, 0.09) 0px -3px 5px !important;
+  transform: scale(1.02);
 }
 .active svg {
-  transform: scale(1.05);
+  transform: scale(1);
 }
 
 footer {
