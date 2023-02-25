@@ -1,0 +1,101 @@
+#party {
+    @include flexbox(column, space-evenly, center);
+    @include min-height-width(400px, 320px);
+    @include height-width(100%, 100%);
+}
+
+.party-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    height: 60px;
+
+    div {
+        @include flexbox(row, center, center);
+        background-color: lightseagreen;
+        height: 100%;
+        width: 30%;
+        border-radius: 12px;
+    }
+}
+
+
+.party-grid {
+    background-color: rgba($violet, .4);
+    width: 500px;
+    height: 500px;
+    border-radius: 15px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    padding: 5px;
+
+    .card-container {
+        cursor: pointer;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+        border-radius: 12px;
+        perspective: 1000px;
+
+        &:active .card {
+            transform: rotateY(180deg);
+        }
+
+        .card {
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: cornflowerblue;
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            transform-style: preserve-3d;
+            transition: all 500ms ease;
+
+            .card-back {
+                overflow: hidden;
+                position: absolute;
+                backface-visibility: hidden;
+                filter: contrast(110%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                width: 100%;
+                border-radius: 12px;
+                border: 2px solid whitesmoke;
+            }
+
+            .card-front {
+                overflow: hidden;
+                position: absolute;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: whitesmoke;
+                height: 100%;
+                width: 100%;
+                border-radius: 12px;
+                border: 2px solid #333333;
+                backface-visibility: hidden;
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+.grid-4 {
+    grid-template-rows: repeat(4, 1fr);
+}
+.grid-5 {
+    grid-template-rows: repeat(5, 1fr);
+}
+.grid-6 {
+    grid-template-rows: repeat(6, 1fr);
+}
+
