@@ -8,6 +8,8 @@ const score: Element|null = document.querySelector('.party-info-score');
 let counter: Number = 0;
 let nbPair: Number = 0;
 
+let GRID;
+
 
 // DATA - set in LocalStorage
 fetch('../data/data.json')

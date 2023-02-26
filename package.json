@@ -6,6 +6,7 @@
 	"scripts": {
 		"wts": "npx tsc --watch",
 		"wsass": "sass --watch scss:css",
+		"clean": "sh ./_script/cleanDev.sh",
 		"build": "sh ./_script/build.sh"
 	},
 	"keywords": [],
