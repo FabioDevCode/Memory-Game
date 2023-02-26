@@ -1,6 +1,5 @@
 #!/bin/bash
 
 rm app.js
-cd ./css
-rm style.css
-rm style.css.map
+rm ./css/style.css
+rm ./css/style.css.map

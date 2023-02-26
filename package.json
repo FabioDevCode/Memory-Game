@@ -4,8 +4,7 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"wts": "npx tsc --watch",
-		"wsass": "sass --watch scss:css",
+		"dev": "node ./_script/live.js && npx tsc --watch && sass --watch scss:css",
 		"clean": "sh ./_script/cleanDev.sh",
 		"build": "sh ./_script/build.sh"
 	},
@@ -17,6 +16,7 @@
 		"typescript": "^4.9.5"
 	},
 	"dependencies": {
-		"esbuild": "0.17.10"
+		"esbuild": "0.17.10",
+		"live-server": "^1.2.2"
 	}
 }
