@@ -45,6 +45,8 @@ footer, header {
   min-width: 320px;
   height: 100%;
   width: 100%;
+  transform: scale(0);
+  transition: all 500ms ease-in-out;
 }
 
 .btn-grid-list {
@@ -113,6 +115,7 @@ footer, header {
   cursor: not-allowed !important;
   box-shadow: none !important;
   transform: scale(0.15) !important;
+  pointer-events: none !important;
 }
 .disabled img {
   visibility: hidden !important;
@@ -127,6 +130,8 @@ footer, header {
   min-width: 320px;
   height: 100%;
   width: 100%;
+  transform: scale(0);
+  transition: all 500ms ease-in-out;
 }
 
 .party-info {
@@ -141,74 +146,105 @@ footer, header {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: lightseagreen;
+  box-shadow: rgba(146, 88, 206, 0.35) 0px 0px 12px 0px, rgba(146, 88, 206, 0.5) 0px 0px 1px 0px;
+  border: 1px solid rgba(146, 88, 206, 0.3);
+  background-color: #030031;
   height: 100%;
-  width: 30%;
   border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.party-info div:nth-child(1) {
+  width: 48%;
+}
+.party-info div:nth-child(2) {
+  width: 24%;
+}
+.party-info div:nth-child(3) {
+  width: 24%;
 }
 
 .party-grid {
   background-color: rgba(154, 91, 217, 0.4);
   width: 500px;
   height: 500px;
-  border-radius: 15px;
+  border-radius: 25px;
   display: grid;
-  align-items: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  padding: 5px;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
-.party-grid .card-container {
+.party-grid .card {
+  overflow: hidden;
   cursor: pointer;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  border-radius: 12px;
-  perspective: 1000px;
-}
-.party-grid .card-container:active .card {
-  transform: rotateY(180deg);
-}
-.party-grid .card-container .card {
-  overflow: hidden;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: cornflowerblue;
-  height: 100%;
-  width: 100%;
+  height: 95%;
+  width: 95%;
   border-radius: 12px;
-  transform-style: preserve-3d;
   transition: all 500ms ease;
+  margin: auto;
 }
-.party-grid .card-container .card .card-back {
-  overflow: hidden;
+.party-grid .card:active {
+  transform: scale(0.96);
+}
+.party-grid .card img {
   position: absolute;
-  backface-visibility: hidden;
-  filter: contrast(110%);
+  border-radius: 12px;
+}
+.party-grid .card .front {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  background-color: #F3F3F3;
+  border-radius: 25px;
+  border: 10px solid black;
+  transform: scale(0);
+  transition: all 300ms ease-in-out;
+}
+.party-grid .card .back {
+  overflow: hidden;
+  height: 100%;
+  border-radius: 25px;
+  border: 10px solid #F3F3F3;
+  transform: scale(1);
+  transition: all 300ms ease-in-out;
+}
+.party-grid .alreadychoose {
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
+  height: 95%;
+  width: 95%;
   border-radius: 12px;
-  border: 2px solid whitesmoke;
+  margin: auto;
+  pointer-events: none;
 }
-.party-grid .card-container .card .card-front {
+.party-grid .alreadychoose .front {
+  position: relative;
+  border-radius: 12px;
   overflow: hidden;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: whitesmoke;
   height: 100%;
   width: 100%;
-  border-radius: 12px;
-  border: 2px solid #333333;
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
+  object-fit: cover;
+  object-position: center;
+  background-color: #F3F3F3;
+  border-radius: 25px;
+  border: 10px solid black;
+}
+.party-grid .alreadychoose .back {
+  display: none;
+}
+
+.grid-2 {
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .grid-4 {
@@ -221,6 +257,18 @@ footer, header {
 
 .grid-6 {
   grid-template-rows: repeat(6, 1fr);
+}
+
+.card.choose {
+  pointer-events: none;
+}
+
+.card.choose .back {
+  transform: scale(0);
+}
+
+.card.choose .front {
+  transform: scale(1);
 }
 
 * {
@@ -239,6 +287,7 @@ body {
 header {
   min-height: max-content;
   min-width: max-content;
+  pointer-events: none;
 }
 header h1 {
   font-family: "Audiowide", cursive, Arial, Helvetica, sans-serif;
@@ -274,8 +323,16 @@ footer p a:hover {
 }
 
 .none {
+  transform: scale(0) !important;
+}
+
+.hide {
   display: none !important;
   visibility: hidden !important;
+}
+
+.show {
+  transform: scale(1) !important;
 }
 
 /*# sourceMappingURL=style.css.map */

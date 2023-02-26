@@ -2,6 +2,8 @@
     @include flexbox(column, space-evenly, center);
     @include min-height-width(400px, 320px);
     @include height-width(100%, 100%);
+    transform: scale(0);
+    transition: all 500ms ease-in-out;
 }
 
 .party-info {
@@ -13,10 +15,24 @@
 
     div {
         @include flexbox(row, center, center);
-        background-color: lightseagreen;
+        box-shadow: rgba(146, 88, 206, .35) 0px 0px 12px 0px,
+                    rgba(146, 88, 206, .5) 0px 0px 1px 0px;
+        border: 1px solid rgba(146, 88, 206, .3);
+        background-color: $bgMain;
         height: 100%;
-        width: 30%;
         border-radius: 12px;
+        font-weight: 700;
+        font-size: 1.1em;
+
+        &:nth-child(1) {
+            width: 48%;
+        }
+        &:nth-child(2) {
+            width: 24%;
+        }
+        &:nth-child(3) {
+            width: 24%;
+        }
     }
 }
 
@@ -25,70 +41,103 @@
     background-color: rgba($violet, .4);
     width: 500px;
     height: 500px;
-    border-radius: 15px;
+    border-radius: 25px;
     display: grid;
-    align-items: center;
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-    padding: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 
-    .card-container {
-        cursor: pointer;
+
+    .card {
         overflow: hidden;
-        height: 100%;
-        width: 100%;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95%;
+        width: 95%;
         border-radius: 12px;
-        perspective: 1000px;
+        transition: all 500ms ease;
+        margin: auto;
 
-        &:active .card {
-            transform: rotateY(180deg);
+        &:active {
+            transform: scale(.96);
         }
 
-        .card {
+        img {
+            position: absolute;
+            border-radius: 12px;
+        }
+
+        .front {
             overflow: hidden;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: cornflowerblue;
             height: 100%;
             width: 100%;
-            border-radius: 12px;
-            transform-style: preserve-3d;
-            transition: all 500ms ease;
+            object-fit: cover;
+            object-position: center;
+            background-color: $txtMain;
+            border-radius: 25px;
+            border: 10px solid black;
+            transform: scale(0);
+            transition: all 300ms ease-in-out;
+        }
 
-            .card-back {
-                overflow: hidden;
-                position: absolute;
-                backface-visibility: hidden;
-                filter: contrast(110%);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
-                width: 100%;
-                border-radius: 12px;
-                border: 2px solid whitesmoke;
-            }
-
-            .card-front {
-                overflow: hidden;
-                position: absolute;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: whitesmoke;
-                height: 100%;
-                width: 100%;
-                border-radius: 12px;
-                border: 2px solid #333333;
-                backface-visibility: hidden;
-                transform: rotateY(180deg);
-            }
+        .back {
+            overflow: hidden;
+            height: 100%;
+            border-radius: 25px;
+            border: 10px solid $txtMain;
+            transform: scale(1);
+            transition: all 300ms ease-in-out;
         }
     }
+
+    .alreadychoose {
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 95%;
+        width: 95%;
+        border-radius: 12px;
+        margin: auto;
+        pointer-events: none;
+
+        .front {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            background-color: $txtMain;
+            border-radius: 25px;
+            border: 10px solid black;
+        }
+
+        .back {
+            display: none;
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+.grid-2 {
+    grid-template-rows: repeat(2, 1fr);
+}
+
 .grid-4 {
     grid-template-rows: repeat(4, 1fr);
 }
@@ -99,3 +148,13 @@
     grid-template-rows: repeat(6, 1fr);
 }
 
+.card.choose {
+    pointer-events: none;
+}
+
+.card.choose .back {
+    transform: scale(0);
+}
+.card.choose .front {
+    transform: scale(1);
+}

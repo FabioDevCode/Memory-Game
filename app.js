@@ -1,6 +1,12 @@
 "use strict";
 const choice = document.querySelector('#choice');
 const party = document.querySelector('#party');
+// PARTY
+const themeChoose = document.querySelector('.party-info-theme');
+const timer = document.querySelector('.party-info-time');
+const score = document.querySelector('.party-info-score');
+let counter = 0;
+let nbPair = 0;
 // DATA - set in LocalStorage
 fetch('../data/data.json')
     .then(res => res.json())
@@ -54,6 +60,7 @@ function disabledBtn(selectValue) {
     const btn5 = document.querySelector('.btn-grid-5');
     const btn4 = document.querySelector('.btn-grid-4');
     if (!array.includes('6')) {
+        btn5 === null || btn5 === void 0 ? void 0 : btn5.classList.remove('active');
         btn6 === null || btn6 === void 0 ? void 0 : btn6.classList.remove('active');
         btn6 === null || btn6 === void 0 ? void 0 : btn6.classList.add('disabled');
         btn4 === null || btn4 === void 0 ? void 0 : btn4.classList.remove('disabled');
@@ -64,6 +71,7 @@ function disabledBtn(selectValue) {
     }
     ;
     if (!array.includes('5')) {
+        btn6 === null || btn6 === void 0 ? void 0 : btn6.classList.remove('active');
         btn5 === null || btn5 === void 0 ? void 0 : btn5.classList.remove('active');
         btn5 === null || btn5 === void 0 ? void 0 : btn5.classList.add('disabled');
         btn4 === null || btn4 === void 0 ? void 0 : btn4.classList.remove('disabled');
@@ -96,6 +104,73 @@ btns.forEach((el) => {
 });
 btnPlay.addEventListener('click', function () {
     const gridChoice = document.querySelector('.btn-grid.active');
+    // @ts-ignore
+    nbPair = (4 * (gridChoice === null || gridChoice === void 0 ? void 0 : gridChoice.getAttribute('value'))) / 2;
+    // @ts-ignore
+    score === null || score === void 0 ? void 0 : score.innerHTML = `${counter} / ${nbPair}`;
+    // @ts-ignore
+    themeChoose === null || themeChoose === void 0 ? void 0 : themeChoose.innerHTML = selectEl.value;
     console.log(selectEl.value);
     console.log(gridChoice === null || gridChoice === void 0 ? void 0 : gridChoice.getAttribute('value'));
+    choice === null || choice === void 0 ? void 0 : choice.classList.remove('show');
+    setTimeout(() => {
+        choice === null || choice === void 0 ? void 0 : choice.classList.add('hide');
+        party === null || party === void 0 ? void 0 : party.classList.remove('hide');
+        setTimeout(() => {
+            party === null || party === void 0 ? void 0 : party.classList.add('show');
+        }, 50);
+    }, 500);
+});
+//----------------------------------------------------------------------------//
+let value1 = 'none';
+let value2 = 'none';
+const allCards = document.querySelectorAll(".card");
+allCards.forEach((el) => {
+    el.addEventListener('click', function () {
+        el.classList.add('choose');
+        if (value1 != 'none') {
+            // @ts-ignore
+            value2 = el.getAttribute('value');
+        }
+        else {
+            // @ts-ignore
+            value1 = el.getAttribute('value');
+        }
+        // Check if is pair
+        if (value1 != 'none' && value2 != 'none') {
+            if (value1 === value2) {
+                // @ts-ignore
+                counter += 1;
+                value1 = 'none';
+                value2 = 'none';
+                const allChoose = document.querySelectorAll('.choose');
+                setTimeout(() => {
+                    allChoose.forEach(el => {
+                        el.classList.remove('card');
+                        el.classList.remove('choose');
+                        el.classList.add('alreadychoose');
+                        el.setAttribute('disabled', 'true');
+                        // @ts-ignore
+                        score === null || score === void 0 ? void 0 : score.innerHTML = `${counter} / ${nbPair}`;
+                    });
+                }, 400);
+            }
+            else {
+                value1 = 'none';
+                value2 = 'none';
+                setTimeout(() => {
+                    allCards.forEach(el => {
+                        el.classList.remove('choose');
+                    });
+                }, 1500);
+            }
+            console.log(counter);
+        }
+        // Check si partie terminé
+        if (counter === nbPair && nbPair != 0) {
+            setTimeout(() => {
+                window.alert('Bravo ! Tu as gagné !');
+            }, 1000);
+        }
+    });
 });

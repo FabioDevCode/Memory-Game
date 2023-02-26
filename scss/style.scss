@@ -27,6 +27,7 @@ header {
     @extend %flex-center;
     @extend %header-footer;
     @include min-height-width(max-content, max-content);
+    pointer-events: none;
 
     h1 {
         font-family: $title;
@@ -74,6 +75,14 @@ footer {
 
 //------GENERIC;
 .none {
+    transform: scale(0) !important;
+}
+
+.hide {
     display: none !important;
     visibility: hidden !important;
+}
+
+.show {
+    transform: scale(1) !important;
 }
