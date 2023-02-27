@@ -41,9 +41,9 @@
     background-color: rgba($violet, .4);
     width: 500px;
     height: 500px;
-    border-radius: 25px;
+    border-radius: 20px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 
@@ -57,9 +57,10 @@
         align-items: center;
         height: 95%;
         width: 95%;
-        border-radius: 12px;
+        border-radius: 20px;
         transition: all 500ms ease;
         margin: auto;
+        background-color: $txtMain;
 
         &:active {
             transform: scale(.96);
@@ -72,13 +73,12 @@
 
         .front {
             overflow: hidden;
-            height: 100%;
-            width: 100%;
+            height: 90%;
+            width: 90%;
             object-fit: cover;
             object-position: center;
             background-color: $txtMain;
-            border-radius: 25px;
-            border: 10px solid black;
+            border-radius: 20px;
             transform: scale(0);
             transition: all 300ms ease-in-out;
         }
@@ -86,8 +86,8 @@
         .back {
             overflow: hidden;
             height: 100%;
-            border-radius: 25px;
-            border: 10px solid $txtMain;
+            border-radius: 20px;
+            border: 5px solid $txtMain;
             transform: scale(1);
             transition: all 300ms ease-in-out;
         }
@@ -116,7 +116,7 @@
             object-position: center;
             background-color: $txtMain;
             border-radius: 25px;
-            border: 10px solid black;
+            border: 8px solid $blue;
         }
 
         .back {
@@ -129,29 +129,31 @@
 
 
 
-
-
-
-
-
-.grid-2 {
-    grid-template-rows: repeat(2, 1fr);
-}
-
 .grid-4 {
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 .grid-5 {
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+}
+.party-grid.grid-5 {
+    width: 625px;
 }
 .grid-6 {
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
+}
+.party-grid.grid-6 {
+    width: 750px;
+}
+
+
+
+.temporary-display {
+    pointer-events: none;
 }
 
 .card.choose {
     pointer-events: none;
 }
-
 .card.choose .back {
     transform: scale(0);
 }
