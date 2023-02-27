@@ -1,3 +1,4 @@
+"use strict";
 const choice = document.querySelector('#choice');
 const party = document.querySelector('#party');
 // PARTY
