@@ -20,8 +20,8 @@
                     "img": "hache.svg"
                 },
                 {
-                    "value": "hache-2",
-                    "img": "hache-2.svg"
+                    "value": "sword",
+                    "img": "sword.svg"
                 },
                 {
                     "value": "hache-double",
@@ -40,16 +40,12 @@
                     "img": "masse.svg"
                 },
                 {
-                    "value": "masse-chaine",
-                    "img": "masse-chaine.svg"
-                },
-                {
                     "value": "sabre",
                     "img": "sabre.svg"
                 },
                 {
-                    "value": "sword",
-                    "img": "sword.svg"
+                    "value": "masse-chaine",
+                    "img": "masse-chaine.svg"
                 },
                 {
                     "value": "sword-2",
@@ -58,6 +54,10 @@
                 {
                     "value": "sword-3",
                     "img": "sword-3.svg"
+                },
+                {
+                    "value": "hache-2",
+                    "img": "hache-2.svg"
                 }
             ]
         },

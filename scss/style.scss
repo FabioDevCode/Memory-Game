@@ -28,11 +28,15 @@ header {
     @extend %flex-center;
     @extend %header-footer;
     @include min-height-width(max-content, max-content);
-    pointer-events: none;
 
     h1 {
+        cursor: pointer;
         font-family: $title;
         font-size: 2.5em;
+
+        &:active {
+            transform: scale(.9);
+        }
     }
 }
 

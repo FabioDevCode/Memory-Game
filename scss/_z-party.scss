@@ -38,7 +38,7 @@
 
 
 .party-grid {
-    background-color: rgba($violet, .4);
+    background-color: rgba($bgMain, .7);
     width: 500px;
     height: 500px;
     border-radius: 20px;
@@ -78,7 +78,7 @@
             object-fit: cover;
             object-position: center;
             background-color: $txtMain;
-            border-radius: 20px;
+            border-radius: 0px;
             transform: scale(0);
             transition: all 300ms ease-in-out;
         }
@@ -127,8 +127,6 @@
 }
 
 
-
-
 .grid-4 {
     grid-template-columns: repeat(4, 1fr);
 }
@@ -144,7 +142,6 @@
 .party-grid.grid-6 {
     width: 750px;
 }
-
 
 
 .temporary-display {

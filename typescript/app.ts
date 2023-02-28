@@ -1,9 +1,14 @@
 const choice: Element|null = document.querySelector('#choice');
 const party: Element|null = document.querySelector('#party');
+const titleH1: Element|null = document.querySelector('#title_h1');
+
+titleH1?.addEventListener('click', function(){
+    console.log("test");
+    location.reload();
+});
 
 // PARTY
 const themeChoose: Element|null = document.querySelector('.party-info-theme');
-const timer: Element|null = document.querySelector('.party-info-time');
 const score: Element|null = document.querySelector('.party-info-score');
 // ---------
 const grid: Element|null = document.querySelector('.party-grid');
@@ -119,7 +124,6 @@ btns.forEach((el: Element): void => {
 btnPlay.addEventListener('click', function() {
     const gridChoice: Element|null = document.querySelector('.btn-grid.active');
 
-
     // @ts-ignore
     nbPair = (4 * gridChoice?.getAttribute('value'))/2;
     // @ts-ignore
@@ -138,16 +142,7 @@ btnPlay.addEventListener('click', function() {
     grid?.classList.remove('grid-6');
     grid?.classList.add(`grid-${gridChoice?.getAttribute('value')}`);
 
-    const gridValue = gridChoice?.getAttribute('value');
-
-    console.log("====================");
-    console.log(arrayLonger);
-    console.log(selectEl.value);
-    console.log(gridValue);
-    console.log("====================");
-
     const dataUse = [...arr, ...arr];
-    console.log(dataUse);
 
     function buildGrid(arrayUse: {value: String, img: String}[], theme: String) {
         if(arrayUse.length > 0) {
@@ -157,11 +152,13 @@ btnPlay.addEventListener('click', function() {
             const div = document.createElement('div');
             div.classList.add('card');
             div.setAttribute('value', `${thisData[random].value}`);
+
             const imgFront = document.createElement('img');
             imgFront.classList.add('front');
             imgFront.setAttribute('src', `./assets/${theme}/${thisData[random].img}`);
             imgFront.setAttribute('alt', `${thisData[random].value}`);
             div.appendChild(imgFront);
+
             const imgBack = document.createElement('img');
             imgBack.classList.add('back');
             imgBack.setAttribute('src', './assets/bg-game.jpg');
@@ -192,8 +189,28 @@ btnPlay.addEventListener('click', function() {
     }, 600);
 
 
-
     //---GAME---PLAY------------------------------------------------------------------//
+    const timer: Element|null = document.querySelector('.party-info-timer');
+    let timeMin: string|number = '00';
+    let timeSec: string|number = '00';
+    let time: number = 0;
+    let timerPlayer:any;
+    let allTime: string;
+
+    timerPlayer = setInterval(function() {
+        time++;
+
+        timeMin = Math.floor(time/60) > 9 ? Math.floor(time/60) : `0${Math.floor(time/60)}`;
+        timeSec = time % 60 > 9 ? time % 60 : `0${time%60}`;
+
+        allTime = `${timeMin}:${timeSec}`;
+
+        //@ts-ignore
+        timer?.innerHTML = allTime;
+
+    }, 1000);
+
+
     let value1: String = 'none';
     let value2: String = 'none';
 
@@ -251,11 +268,12 @@ btnPlay.addEventListener('click', function() {
                 console.log(counter);
             }
 
-
             // Check si partie terminé
             if(counter === nbPair && nbPair != 0) {
                 setTimeout(() => {
-                    window.alert('Bravo ! Tu as gagné !');
+                    // @ts-ignore
+                    clearInterval(timerPlayer);
+                    window.alert(`Bravo ! Tu as gagné en ${allTime.split(':')[0]}min & ${allTime.split(':')[1]}sec !`);
                     location.reload();
                 }, 600);
             }
