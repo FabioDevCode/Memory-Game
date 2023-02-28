@@ -264,8 +264,6 @@ btnPlay.addEventListener('click', function() {
                         });
                     }, 1400);
                 }
-
-                console.log(counter);
             }
 
             // Check si partie terminé
