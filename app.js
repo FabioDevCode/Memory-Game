@@ -23,11 +23,12 @@ fetch('https://fabiodevcode.github.io/Memory-Game/data/data.json')
 });
 // @ts-ignore
 const data = JSON.parse(localStorage.getItem('memory-data'));
+console.log(data);
 // CREATE - Select :
 const selectEl = document.createElement('select');
 selectEl.setAttribute('id', 'select-theme');
-selectEl.setAttribute('name', 'thme');
-data.theme.forEach((el) => {
+selectEl.setAttribute('name', 'theme');
+data?.theme.forEach((el) => {
     const option = document.createElement('option');
     option.setAttribute('value', `${el}`);
     option.innerText = `${el}`;
