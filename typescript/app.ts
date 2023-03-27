@@ -20,7 +20,7 @@ let arrayLonger = 0;
 let arrayGrid = [];
 
 // DATA - set in LocalStorage
-fetch('../data/data.json')
+fetch('./data/data.json')
 .then(res => res.json())
 .then((data): void => {
     localStorage.setItem('memory-data', JSON.stringify(data));

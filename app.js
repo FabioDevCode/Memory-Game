@@ -16,7 +16,7 @@ let nbPair = 0;
 let arrayLonger = 0;
 let arrayGrid = [];
 // DATA - set in LocalStorage
-fetch('../data/data.json')
+fetch('https://fabiodevcode.github.io/Memory-Game/data/data.json')
     .then(res => res.json())
     .then((data) => {
     localStorage.setItem('memory-data', JSON.stringify(data));
