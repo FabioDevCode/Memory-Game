@@ -44,7 +44,8 @@ header {
 main {
     margin: 15px 2vw;
     padding: 20px 30px;
-    @include min-height-width(440px, 320px);
+    @include min-height-width(440px, 340px);
+    width: 100%;
     background-color: rgba($bgMain, .5);
     height: 100vh;
     max-height: calc(99vh - 220px);

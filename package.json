@@ -6,7 +6,7 @@
 	"scripts": {
 		"wts": "npx tsc --watch",
 		"wsass": "sass --watch scss:css",
-		"dev": "node ./_script/live.js && npx tsc --watch && sass --watch scss:css",
+		"dev": "node ./_script/live.js",
 		"clean": "sh ./_script/cleanDev.sh",
 		"build": "sh ./_script/build.sh",
 		"deploy": "sh ./_script/deploy.sh"

@@ -1,9 +1,10 @@
 #party {
     @include flexbox(column, space-evenly, center);
-    @include min-height-width(400px, 320px);
+    @include min-height-width(580px, 320px);
     @include height-width(100%, 100%);
     transform: scale(0);
     transition: all 500ms ease-in-out;
+    background-color: teal;
 }
 
 .party-info {
@@ -55,7 +56,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 95%;
+        aspect-ratio: 1 / 1;
         width: 95%;
         border-radius: 20px;
         transition: all 500ms ease;
@@ -73,8 +74,8 @@
 
         .front {
             overflow: hidden;
-            height: 90%;
-            width: 90%;
+            height: 70%;
+            width: 70%;
             object-fit: cover;
             object-position: center;
             background-color: $txtMain;
@@ -102,21 +103,22 @@
         align-items: center;
         height: 95%;
         width: 95%;
-        border-radius: 12px;
+        border-radius: 20px;
         margin: auto;
         pointer-events: none;
+        background-color: $txtMain;
+        border: 8px solid $blue;
 
         .front {
             position: relative;
             border-radius: 12px;
             overflow: hidden;
-            height: 100%;
-            width: 100%;
+            height: 75%;
+            width: 75%;
             object-fit: cover;
             object-position: center;
             background-color: $txtMain;
-            border-radius: 25px;
-            border: 8px solid $blue;
+            border-radius: 0px;
         }
 
         .back {

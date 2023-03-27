@@ -16,19 +16,18 @@ let nbPair = 0;
 let arrayLonger = 0;
 let arrayGrid = [];
 // DATA - set in LocalStorage
-fetch('https://fabiodevcode.github.io/Memory-Game/data/data.json')
+fetch('../data/data.json')
     .then(res => res.json())
     .then((data) => {
     localStorage.setItem('memory-data', JSON.stringify(data));
 });
 // @ts-ignore
 const data = JSON.parse(localStorage.getItem('memory-data'));
-console.log(data);
 // CREATE - Select :
 const selectEl = document.createElement('select');
 selectEl.setAttribute('id', 'select-theme');
-selectEl.setAttribute('name', 'theme');
-data?.theme.forEach((el) => {
+selectEl.setAttribute('name', 'thme');
+data.theme.forEach((el) => {
     const option = document.createElement('option');
     option.setAttribute('value', `${el}`);
     option.innerText = `${el}`;

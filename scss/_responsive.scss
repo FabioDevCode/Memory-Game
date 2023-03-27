@@ -1,0 +1,63 @@
+// 850px grid 4x6
+@media screen and (max-width: 850px) {
+    header {
+        h1 {
+            font-size: 1.5em !important;
+        }
+    }
+
+    footer {
+        font-size: 1em;
+    }
+
+    .party-grid {
+        transition: all 0ms !important;
+    }
+
+    .party-grid {
+        background-color: tomato;
+        transform: rotate(90deg) scale(.65);
+    }
+
+    main {
+        padding: 0px 0px;
+    }
+
+    .card {
+        transform: rotate(-90deg) !important;
+    }
+    .card, .card .front, .card .back {
+        transform: rotate(-90deg);
+    }
+    .alreadychoose .front {
+        transform: rotate(-90deg);
+    }
+
+    .party-info {
+        justify-content: center !important;
+    }
+
+    .party-info-theme {
+        display: none !important;
+    }
+
+    .party-info-timer {
+        margin-right: 2px;
+        width: 40vw !important;
+    }
+
+    .party-info-score {
+        margin-left: 2px;
+        width: 40vw !important;
+    }
+
+}
+
+
+
+
+
+
+
+
+
