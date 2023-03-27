@@ -4,7 +4,7 @@
     @include height-width(100%, 100%);
     transform: scale(0);
     transition: all 500ms ease-in-out;
-    background-color: teal;
+    overflow: hidden !important;
 }
 
 .party-info {

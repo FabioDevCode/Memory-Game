@@ -132,7 +132,7 @@ footer, header {
   width: 100%;
   transform: scale(0);
   transition: all 500ms ease-in-out;
-  background-color: teal;
+  overflow: hidden !important;
 }
 
 .party-info {
@@ -292,7 +292,6 @@ footer, header {
     transition: all 0ms !important;
   }
   .party-grid {
-    background-color: tomato;
     transform: rotate(90deg) scale(0.65);
   }
   main {
